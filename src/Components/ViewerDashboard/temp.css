@@ -1,0 +1,15 @@
+.gallery-container {
+  padding: 16px;
+}
+
+.gallery-header {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.gallery-img-wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}

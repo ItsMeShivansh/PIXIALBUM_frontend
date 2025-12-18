@@ -1,0 +1,66 @@
+.more-menu {
+  background: var(--color-bg-dark, #181c22);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-main);
+  padding: 1.2rem 0.7rem;
+  min-width: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: absolute;
+  top: 2.5rem;
+  right: 0.5rem;
+  z-index: 1200;
+  border: 1.5px solid var(--color-black);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.04rem;
+}
+
+.more-menu-item {
+  background: none;
+  display: flex;
+  border: none;
+  color: var(--color-accent);
+  font-size: 1.05rem;
+  padding: 0.7rem 1rem;
+  border-radius: var(--border-radius);
+  text-align: left;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s, color 0.18s;
+}
+
+.more-menu-item:hover,
+.more-menu-item:focus {
+  color: var(--color-primary);
+  outline: none;
+  transform: scale(1.05);
+}
+
+.more-menu-item.logout {
+  color: var(--color-error);
+  font-weight: 600;
+  transform: color 0.5s;
+}
+
+.more-menu-item.logout:hover,
+.more-menu-item.logout:focus {
+  color: var(--color-error);
+}
+
+
+@media (max-width: 500px) {
+  .more-menu {
+    min-width: 140px;
+    padding: 0.7rem 0.2rem;
+    right: 0.2rem;
+    top: 2.2rem;
+  }
+  .more-menu-item {
+    font-size: 0.98rem;
+    padding: 0.6rem 0.7rem;
+  }
+}

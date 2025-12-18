@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,500,700&display=swap');
+
+/* Theme variables */
+:root {
+  --color-bg: #23272f;
+  --color-bg-dark: #181c22;
+  --color-black: #000;
+  --color-primary: #1976d2;
+  --color-accent: #fff;
+  --color-error: #ff5252;
+  --color-like: #ff4081;
+  --color-input-bg: #181c22;
+  --border-radius: 8px;
+  --border-radius-lg: 24px 4px 24px 4px;
+  --spacing: 1rem;
+  --font-main: 'Segoe UI', Arial, sans-serif;
+  --box-shadow-main: 0 8px 32px rgba(0,0,0,0.35), 0 2px 16px rgba(35,39,47,0.7);
+}
+
+html, body, .container {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #23272f 0%, black 100%);
+    margin: 0;
+    padding: 0;
+    color: #f1f1f1;
+    min-height: 100vh;
+}
+
+/* Button wrapper utility */
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing);
+}
+
+/* Common button style */
+.btn {
+  padding: 0.9rem 2rem;
+  background: linear-gradient(90deg, var(--color-primary) 60%, var(--color-bg) 100%);
+  color: var(--color-accent);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.08rem;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(35,39,47, 0.25);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #125ea2 60%, var(--color-bg) 100%);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+}
+
+/* Code block utility */
+.code-block {
+  background: var(--color-bg-dark);
+  color: var(--color-accent);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 0.95rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+/* Error message utility */
+.error-message {
+  color: var(--color-error);
+  margin-bottom: var(--spacing);
+  text-align: center;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  background: transparent;
+}
+/* 
+.loading-spinner {
+  width: 54px;
+  height: 54px;
+  position: relative;
+  display: inline-block;
+}
+
+.loading-spinner .spinner-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary, #1976d2);
+  border-radius: 50%;
+  animation: spinner-bounce 0.8s infinite ease-in-out both;
+}
+
+.loading-spinner .spinner-dot:nth-child(1) {
+  left: 0;
+  top: 21px;
+  animation-delay: -0.24s;
+}
+.loading-spinner .spinner-dot:nth-child(2) {
+  left: 21px;
+  top: 0;
+  animation-delay: -0.12s;
+}
+.loading-spinner .spinner-dot:nth-child(3) {
+  right: 0;
+  top: 21px;
+  animation-delay: 0s;
+}
+.loading-spinner .spinner-dot:nth-child(4) {
+  left: 21px;
+  bottom: 0;
+  animation-delay: -0.36s;
+}
+
+@keyframes spinner-bounce {
+  0%, 100% {
+    transform: scale(1);
+    background: var(--color-primary, #1976d2);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    background: var(--color-accent, #90caf9);
+    opacity: 0.7;
+  }
+} */
+
+.loading-spinner {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  animation: spinner-rotate 1.2s linear infinite;
+}
+
+.spinner-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  /* box-shadow: 0 0 12px #1976d2, 0 0 24px #fff; */
+}
+
+/* Position dots at the 4 corners (vertices of a square) */
+.spinner-dot:nth-child(1) { top: 0; left: 0; }
+.spinner-dot:nth-child(2) { top: 0; right: 0; }
+.spinner-dot:nth-child(3) { bottom: 0; right: 0; }
+.spinner-dot:nth-child(4) { bottom: 0; left: 0; }
+
+@keyframes spinner-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive utility */
+@media (max-width: 500px) {
+  .btn {
+    width: 100%;
+    padding: 0.9rem 0.5rem;
+  }
+  .code-block {
+    font-size: 0.85rem;
+    padding: 0.7rem;
+  }
+}
+
+.form-logo {
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  max-width: 360px;
+  width: 100%;
+  height: auto;
+}
+
+
+.more-menu-wrapper {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  z-index: 2000;
+}
+
+.more-menu-toggle i.fa-bars {
+  color: #fff;
+  font-size: 2rem;
+  filter: drop-shadow(0 0 6px var(--color-primary, #1976d2));
+  transition: filter 0.2s, color 0.2s;
+}
+
+.more-menu-toggle:hover i.fa-bars,
+.more-menu-toggle:focus i.fa-bars {
+  color: var(--color-primary, #1976d2);
+  filter: drop-shadow(0 0 10px var(--color-primary, #1976d2));
+}
+

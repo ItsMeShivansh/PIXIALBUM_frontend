@@ -1,0 +1,192 @@
+.viewer-dashboard {
+  width: 90%;
+  max-width: 1500px;
+  margin: 3rem auto 0 auto;
+  padding: 2rem 1rem;
+  background: var(--color-bg-dark, #181c22), transparent;
+  border-radius: var(--border-radius-lg, 24px 4px 24px 4px);
+  /* box-shadow: 0 4px 24px rgba(25,118,210,0.10); */
+  min-height: 60vh;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 250px;
+  height: auto;
+  margin: 0 auto 0 auto;
+  display: block;
+}
+
+.logo img, .logo svg {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  margin: auto;
+  display: block;
+}
+
+.viewer-dashboard h2 {
+  color: var(--color-accent, #90caf9);
+  font-family: 'Montserrat';
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  margin-bottom: 2.2rem;
+  text-align: center;
+  background: linear-gradient(90deg, var(--color-primary, #90caf9) 0%, var(--color-accent, #fff) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-radius: 12px;
+  padding: 0.5rem 0;
+  transition: text-shadow 0.18s, filter 0.18s;
+}
+
+.viewer-event-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.viewer-event-card {
+  background: linear-gradient(135deg,
+    rgba(25,118,210,0.13) 0%,
+    rgba(144,202,249,0.10) 60%,
+    var(--color-bg, #23272f) 100%);
+  border-radius: var(--border-radius, 12px);
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 2px 12px rgba(25,118,210,0.07);
+  position: relative;
+  transition: box-shadow 0.18s, transform 0.18s, background 0.18s, border-color 0.18s;
+  border-color: linear-gradient(120deg, var(--color-primary, #1976d2) 0%, #90caf9 100%) 1;
+  padding: 1.5rem 2rem;
+  min-width: 240px;
+  max-width: 320px;
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.viewer-event-card:hover {
+  box-shadow: 0 6px 24px var(--color-primary, #1976d2, 0.18);
+  transform: translateY(-4px) scale(1.03);
+  background: rgba(25, 118, 210, 0.08);
+  border-color: var(--color-primary, #1976d2);
+}
+
+.viewer-event-card h3 {
+  color: var(--color-primary, #1976d2);
+  font-family: 'Nunito', var(--font-main, 'Segoe UI', Arial, sans-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.7rem 0;
+  letter-spacing: 0.5px;
+}
+
+.viewer-event-card > div {
+  color: var(--color-accent, #fff);
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+  opacity: 0.85;
+}
+
+.viewer-loading,
+.viewer-event-list > .no-events-msg {
+  color: #888;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.logout-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  background: transparent;
+  color: var(--color-error, #ff4081);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  /* box-shadow: 0 2px 12px rgba(25,118,210,0.10); */
+  transition: color 0.5s, box-shadow 0.18s, transform 0.13s;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logout-btn i {
+  font-size: 1.2em;
+}
+
+.logout-btn:hover, .logout-btn:focus {
+  color: var(--color-accent, #fff);
+  transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 900px) {
+  .viewer-event-list {
+    gap: 1rem;
+  }
+  .viewer-event-card {
+    min-width: 180px;
+    padding: 1.1rem 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .viewer-dashboard {
+    padding: 1rem 0.3rem;
+    border-radius: var(--border-radius, 8px);
+  }
+  .viewer-dashboard h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+  .viewer-event-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .viewer-event-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    min-width: unset;
+    max-width: 90%;
+    max-height: 140px;
+    /* padding: 1rem 0.7rem; */
+  }
+  .logout-btn {
+    position: relative;
+    bottom: 2.2rem;
+    left: 50%;
+    top: unset;
+    right: unset;
+    transform: translateX(-50%);
+    background: var(--color-error, #ff4081);
+    color: #fff;
+    box-shadow: 0 2px 12px rgba(25,118,210,0.10);
+    padding: 0.7rem 2.2rem;
+    font-size: 1.15rem;
+  }
+  .logout-btn:hover, .logout-btn:focus {
+    background: #d81b60;
+    color: #fff;
+    transform: translateX(-50%) scale(1.04);
+  }
+}

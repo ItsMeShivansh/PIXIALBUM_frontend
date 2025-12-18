@@ -1,0 +1,188 @@
+.profile-page {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #181c22 0%, #23272f 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1rem 1.5rem 1rem;
+  animation: profile-fadein 0.7s cubic-bezier(.4,2,.3,1);
+}
+
+@keyframes profile-fadein {
+  from { opacity: 0; transform: translateY(30px) scale(0.97);}
+  to   { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+.profile-back-btn {
+  background: none;
+  border: none;
+  color: var(--color-primary, #1976d2);
+  font-size: 1.18rem;
+  font-weight: 700;
+  margin-bottom: 2.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.5px;
+  transition: color 0.18s, text-shadow 0.18s;
+  text-shadow: 0 2px 8px rgba(25,118,210,0.10);
+}
+.profile-back-btn:hover {
+  color: #fff;
+  text-shadow: 0 0 8px var(--color-primary, #1976d2);
+}
+
+.profile-card {
+  background: rgba(24, 28, 34, 0.92);
+  border-radius: 22px;
+  box-shadow: 0 4px 32px 0 rgba(25, 118, 210, 0.13), 0 1.5px 12px 0 rgba(25, 118, 210, 0.07);
+  padding: 2.5rem 2.7rem 2.2rem 2.7rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2.7rem;
+  align-items: flex-start;
+  max-width: 540px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  animation: profile-pop 0.7s cubic-bezier(.4,2,.3,1);
+}
+
+@keyframes profile-pop {
+  0% { transform: scale(0.97) translateY(40px); box-shadow: none; opacity: 0.7;}
+  60% { transform: scale(1.04) translateY(-6px);}
+  100% { transform: scale(1) translateY(0); opacity: 1;}
+}
+
+.profile-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  pointer-events: none;
+  background: radial-gradient(circle at 80% 20%, rgba(25,118,210,0.09) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.profile-photo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  z-index: 1;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-color: #23272f;
+  box-shadow: 0 0 0 4px var(--color-primary, #1976d2), 0 2px 18px rgba(25, 118, 210, 0.19);
+  position: relative;
+  cursor: pointer;
+  transition: box-shadow 0.22s, filter 0.22s, transform 0.22s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 2.5px solid #23272f;
+  animation: profile-photo-glow 2.5s infinite alternate;
+}
+
+@keyframes profile-photo-glow {
+  0% { box-shadow: 0 0 0 4px var(--color-primary, #1976d2), 0 2px 18px rgba(25, 118, 210, 0.19);}
+  100% { box-shadow: 0 0 18px 8px rgba(25,118,210,0.18), 0 2px 24px rgba(25, 118, 210, 0.23);}
+}
+
+.profile-photo:hover {
+  box-shadow: 0 0 0 7px var(--color-primary, #1976d2), 0 6px 24px rgba(25, 118, 210, 0.22);
+  filter: brightness(1.09) saturate(1.2);
+  transform: scale(1.04) rotate(-2deg);
+}
+
+.profile-photo-edit {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(35, 39, 47, 0.95);
+  border-radius: 50%;
+  padding: 0.38rem;
+  box-shadow: 0 1px 6px rgba(25, 118, 210, 0.13);
+  color: var(--color-primary, #1976d2);
+  font-size: 1.18rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s, color 0.18s;
+}
+.profile-photo:hover .profile-photo-edit {
+  background: var(--color-primary, #1976d2);
+  color: #fff;
+}
+
+.profile-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  z-index: 1;
+}
+
+.profile-info h2 {
+  margin: 0 0 0.7rem 0;
+  font-size: 1.7rem;
+  color: var(--color-primary, #1976d2);
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-shadow: 0 2px 12px rgba(25,118,210,0.13);
+}
+
+.profile-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.profile-info-list div {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  font-size: 1.08rem;
+  background: rgba(35, 39, 47, 0.82);
+  border-radius: 7px;
+  padding: 0.38rem 0.9rem;
+  box-shadow: 0 1px 4px rgba(25, 118, 210, 0.06);
+  transition: background 0.18s;
+}
+
+.profile-info-list div:hover {
+  background: rgba(25, 118, 210, 0.13);
+}
+
+.profile-label {
+  color: var(--color-primary, #1976d2);
+  font-weight: 700;
+  min-width: 110px;
+  opacity: 0.95;
+  letter-spacing: 0.2px;
+}
+
+@media (max-width: 700px) {
+  .profile-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+    gap: 1.2rem;
+    max-width: 99vw;
+  }
+  .profile-info h2 {
+    font-size: 1.18rem;
+  }
+  .profile-photo {
+    width: 90px;
+    height: 90px;
+  }
+}

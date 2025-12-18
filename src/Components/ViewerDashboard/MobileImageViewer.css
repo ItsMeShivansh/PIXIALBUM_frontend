@@ -1,0 +1,82 @@
+@media (max-width: 700px) {
+  .mobile-image-scroll-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .mobile-image-scroll-item {
+    flex: 0 0 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    position: relative;
+    height: 100vh;
+  }
+  .image-viewer-img {
+    max-width: 98vw;
+    max-height: 70vh;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: 0 2px 16px #0006;
+  }
+  .mobile-image-actions {
+    position: absolute;
+    right: 6vw;
+    bottom: 4vh;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    z-index: 10;
+  }
+  .img-like-btn,
+  .img-download-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    background: transparent;
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 12px rgba(25,118,210,0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  .img-like-btn.liked {
+    background-color: var(--color-like, #ff4081);
+    color: var(--color-accent, #fff);
+  }
+  .image-viewer-close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    font-size: 2.2rem;
+    color: #fff;
+    background: transparent;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    cursor: pointer;
+    border: none;
+  }
+  .img-like-btn:hover 
+  .img-download-btn:hover {
+    background: var(--color-bg, #23272f);
+    color: var(--color-accent, #fff);
+    opacity: 0.75;
+    transform: none;
+  }
+}
