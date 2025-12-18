@@ -423,9 +423,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 For support or inquiries:
-- Use the Contact Us form within the app
 - Open an issue on [GitHub](https://github.com/ItsMeShivansh/PIXIALBUM_frontend/issues)
-- Email: [Your Email]
+- Email: shivansh.santoki07@gmail.com
 
 ## 🙏 Acknowledgments
 
